@@ -1,28 +1,27 @@
+/**
+ * Send a reconnaissance request to a grepolis server to gather intel about the
+ * user, there cities and the surrounding cities.
+ */
 var Reconnaissance = {
-    getCsrfToken : function ()
-    {
-        return Game.csrfToken;
-    },
-    getTownId : function ()
-    {
-        return Game.townId;
-    },
-    getWorldId : function ()
-    {
-        return Game.world_id;
-    },
+    /**
+     * Gather Intelligence about the current city and all surrounding cities and farms.
+     * 
+     * The gather intel will be given as first argument in the callback.
+     * 
+     * @param {Function} callback
+     * @return {Void}
+     */
     gathering : function (callback)
     {
         var me = this,
-            t = me.getTownId(),
-            h = me.getCsrfToken(),
+            townId = getTownId(),
             url,
             data;
 
         url = 'http://' + document.domain + '/game/data?' + $.param({
-            town_id : t,
+            town_id : townId,
             action : 'get',
-            h : h
+            h : getCsrfToken()
         });
 
         // As far as i can see this is useless data, but grepolis require it.
@@ -43,15 +42,18 @@ var Reconnaissance = {
                         type : 'backbone'
                     }
                 ],
-                town_id : t,
+                town_id : townId,
                 nlreq_id : 0
             })
         };
 
-        // Send the post request, `onReconSuccess` will handle the response.
-        $.post(url, data, function(data)
+        // Send the post request.
+        $.post(url, data, function (data)
         {
             callback(data.json);
         }, 'json');
+        
+        // End.
+        return;
     }
 };
