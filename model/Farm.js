@@ -183,4 +183,17 @@ function Farm ()
         // End.
         return data;
     };
+    
+    me.inventory = function(data)
+    {
+        var me = this,
+            intel = data.json;
+        
+        me
+            .setMood(intel.satisfaction)
+            .setStage(intel.expansion_stage);
+        
+        // End.
+        return true;
+    };
 }

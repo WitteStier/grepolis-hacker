@@ -16,7 +16,7 @@
  */
 var BankOfGrepolis = {
     optimizeProfit : false,
-    riskyMood : 50,
+    riskyMood : 75,
     getWood : function ()
     {
         // End.
@@ -98,30 +98,34 @@ var BankOfGrepolis = {
         var me = this;
 
         if (me.getResourcesAvg() === 100) {
+            // TODO
             // The storage warehouse is full, Dont claim new resources anymore.
             // Start claiming units.
         }
 
         if (me.optimizeProfit && (farm.getMood() > me.riskyMood)) {
-            // Optimize the farm for looting.
+            farm
+                .setAction('claim_load')
+                .setClaimType('double')
+                .setClaimTime(300);
         } else {
             farm
                 .setAction('claim_load')
-                .setClaimType('claim_load')
+                .setClaimType('normal')
                 .setClaimTime(300);
-
-            me.doClaim(farm);
         }
+        
+        me.doClaim(farm);
     },
     doClaim : function (farm)
     {
         var me = this;
-
         // Send post request
-        $.post(farm.getClaimUrl(), farm.getClaimData(), me.onClaimSuccess, 'json');
-    },
-    onClaimSuccess : function (data)
-    {
-        console.log('claim response', data);
+        $.post(farm.getClaimUrl(), farm.getClaimData(), farm.inventory, 'json');
+        
+        setInterval(function()
+        {
+            me.doClaim(farm);
+        }, (farm.getClaimTime() * 1000) + 200); // Add some extra time for the request.
     }
 };
