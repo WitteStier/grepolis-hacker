@@ -4,10 +4,10 @@
 (function ()
 {
     $.when(
-        $.getScript('https://cdn.rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js'),
-        $.getScript('https://cdn.rawgit.com/WitteStier/grepolis-hacker/master/Reconnaissance.js'),
-        $.getScript('https://cdn.rawgit.com/WitteStier/grepolis-hacker/master/BankOfGrepolis.js'),
-        $.getScript('https://cdn.rawgit.com/WitteStier/grepolis-hacker/master/model/Farm.js')
+        $.getScript('https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js'),
+        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/Reconnaissance.js'),
+        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/BankOfGrepolis.js'),
+        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/model/Farm.js')
 //        $.getScript('./Reconnaissance.js'),
 //        $.getScript('./BankOfGrepolis.js'),
 //        $.getScript('./model/Farm.js'),
