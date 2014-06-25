@@ -91,24 +91,6 @@ var BankOfGrepolis = {
         $.each(farms, function (_, farm)
         {
             me.claim(farm);
-
-//            console.log(farm.getId(), farm.getName(), farm.getStage(), farm.getMood());
-
-//            farm
-//                .setTownId()
-//                .setAction()
-//                .setCsrfToken()
-//                .setId()
-//                .setClaimType()
-//                .setClaimTime();
-
-
-            // Loot the farm if the optimize flag is raised and the mood is not to low.
-//            if (me.optimizeProfit && (farm.getMood() > me.riskyMood)) {
-//                farm.loot();
-//            } else {
-//                famr.claim();
-//            }
         });
     },
     claim : function (farm)
@@ -124,7 +106,7 @@ var BankOfGrepolis = {
             // Optimize the farm for looting.
         } else {
             farm
-                .setAction('load')
+                .setAction('claim_load')
                 .setClaimType('claim_load')
                 .setClaimTime(300);
 
