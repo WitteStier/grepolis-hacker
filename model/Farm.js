@@ -157,7 +157,7 @@ function Farm ()
     me.getClaimUrl = function ()
     {
         var me = this,
-            url = 'http://' + document.domain + '/game/farm_info?' + $.param({
+            url = 'http://' + document.domain + '/game/farm_town_info?' + $.param({
                 town_id : getTownId(),
                 action : me.getAction(),
                 h : getCsrfToken()
