@@ -114,18 +114,18 @@ var BankOfGrepolis = {
                 .setClaimType('normal')
                 .setClaimTime(300);
         }
-        
-        me.doClaim(farm);
-    },
-    doClaim : function (farm)
-    {
-        var me = this;
-        // Send post request
-        $.post(farm.getClaimUrl(), farm.getClaimData(), farm.inventory, 'json');
-        
-        setInterval(function()
+
+        $.ajax({
+            type : 'POST',
+            url : farm.getClaimUrl(),
+            context : farm,
+            data : farm.getClaimData(),
+            dataType: 'json'
+        }).done(farm.inventory);
+
+        setTimeout(function ()
         {
-            me.doClaim(farm);
-        }, (farm.getClaimTime() * 1000) + 200); // Add some extra time for the request.
+            me.claim(farm);
+        }, (farm.getClaimTime() * 1000) + 500); // Add some extra time for the request.
     }
 };

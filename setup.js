@@ -4,10 +4,12 @@
 (function ()
 {
     $.when(
+        // Production
         $.getScript('https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js'),
         $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/Reconnaissance.js'),
         $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/BankOfGrepolis.js'),
         $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/model/Farm.js')
+        // Development
 //        $.getScript('./Reconnaissance.js'),
 //        $.getScript('./BankOfGrepolis.js'),
 //        $.getScript('./model/Farm.js'),
@@ -19,16 +21,6 @@
 
             Reconnaissance.gathering(function (intel)
             {
-                // TODO Show an alert
-
-                // Claim load
-                // ClaimType : normal, double, 
-                // ClaimTime : 300, 1200, 5400, 14400
-
-                // Claim unit
-                // unitType : sword, slinger, archer, hoplite
-
-                // TODO Set config to the Bank of grepolis
                 BankOfGrepolis.makeMoney(intel);
             });
         } catch (e) {
