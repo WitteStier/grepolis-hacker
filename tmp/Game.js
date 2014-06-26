@@ -1,0 +1,1 @@
+// Copy the Game object from the index source.
