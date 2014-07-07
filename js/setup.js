@@ -35,12 +35,36 @@ function testEnv ()
         throw new Error('Necessary environment data cannot be loaded.');
     }
 
-    alert('Hi ' + getUsername() + ', We successfully infiltrated grepolis.');
-    var c = confirm('Are you sure you want to hack Grepolis?');
+    alert('Hi ' + getUsername() + ',\nWe successfully infiltrated Grepolis.');
+    var c = confirm('You violate the Grepolis license agreement,\nKNOW THE CONSEQUENCES.\nContinue?');
 
     if (!c) {
-        throw new Error('You canceled the Grepolis hacker.');
+        throw new Error('Are you scared....\nCoward.');
     }
+}
+
+/**
+ * Dump debug data.
+ * Follow the README in /game/README.md to setup a development environment.
+ * 
+ * @return {Void}
+ */
+function dumpEnvData ()
+{
+    // Dump Game object.
+    console.log('Copy and paste the following object to /game/Game.js.');
+    console.log('--------------------------------------------------------------------------------');
+    console.log(JSON.stringify(Game));
+    console.log('--------------------------------------------------------------------------------');
+    // Get and dump game data.
+    Reconnaissance.gathering(function (intel)
+    {
+        // Dump intel.
+        console.log('Copy and paste the following object to /game/data.');
+        console.log('--------------------------------------------------------------------------------');
+        console.log(JSON.stringify(intel));
+        console.log('--------------------------------------------------------------------------------');
+    });
 }
 
 /**
