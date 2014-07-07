@@ -24,7 +24,7 @@ AGPL-3.0
 ### How to use
 
 1. [Open your browser console.](https://www.google.com/search?q=how+to+open+the+browser+console)
-2. Copy & Paste the following code.  
+2. Copy & Paste the following code in your console.  
    `$.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/setup.js');`
 3. Press enter.
 4. Confirm you want to autoFarm.

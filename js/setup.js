@@ -5,15 +5,15 @@
 {
     $.when(
         // Production
-//        $.getScript('https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js'),
-//        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/Reconnaissance.js'),
-//        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/BankOfGrepolis.js'),
-//        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/model/Farm.js')
+        $.getScript('https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js'),
+        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/Reconnaissance.js'),
+        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/BankOfGrepolis.js'),
+        $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/model/Farm.js')
         // Development
-        $.getScript('./js/Reconnaissance.js'),
-        $.getScript('./js/BankOfGrepolis.js'),
-        $.getScript('./js/model/Farm.js'),
-        $.getScript('./game/Game.js')
+//        $.getScript('./js/Reconnaissance.js'),
+//        $.getScript('./js/BankOfGrepolis.js'),
+//        $.getScript('./js/model/Farm.js'),
+//        $.getScript('./game/Game.js')
         ).done(function ()
     {
         try {
