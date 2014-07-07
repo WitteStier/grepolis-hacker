@@ -28,7 +28,7 @@ AGPL-3.0
    `$.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/setup.js');`
 3. Press enter.
 4. Confirm you want to autoFarm.
-5. Keep a connection with Grepolis alive.
+5. Keep the connection with Grepolis alive.
 
 ## Options
 
@@ -43,10 +43,10 @@ After 3 days of testing and playing i dont like Grepolis anymore :).
 I created this tool with some options open to add, like 
 
 - Support multiple cities.
-- Support multiple Islands.
+- Support multiple islands.
 - Support multiple worlds.
-- Auto upgrade the warehouse.
+- Auto upgrade the warehouse when it is full.
 - Store silver in the cave when the warehouse is full.
 - Auto claim units when the warehouse is full.
 
-leave some positive comments in my issue tracker to trigger me to add one or all the features above.
+Leave some positive comments in my issue tracker to trigger me to add one or more features above.
