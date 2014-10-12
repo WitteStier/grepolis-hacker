@@ -5,7 +5,6 @@
 {
     $.when(
         // Production
-        $.getScript('https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js'),
         $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/Reconnaissance.js'),
         $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/BankOfGrepolis.js'),
         $.getScript('https://rawgit.com/WitteStier/grepolis-hacker/master/js/model/Farm.js')
